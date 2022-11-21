@@ -76,7 +76,7 @@ jobs:
     - name: Trigger an Azure Pipelines to deploy into aks
       uses: Azure/pipelines@v1
       with: 
-        azure-devops-project-url: 'https://dev.azure.com/abdelalibendra-etu/k8s-app'
+        azure-devops-project-url: 'https://dev.azure.com/abdelalibendra-etu/K8S-APP-CI-CD'
         azure-pipeline-name: "bendraabdelali.K8S-APP-CI-CD" # name of the Azure pipeline to be triggered
         azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'  
         
