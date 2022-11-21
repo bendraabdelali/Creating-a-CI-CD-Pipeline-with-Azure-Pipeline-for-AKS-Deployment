@@ -78,5 +78,5 @@ jobs:
       with: 
         azure-devops-project-url: 'https://dev.azure.com/abdelalibendra-etu/k8s-app'
         azure-pipeline-name: "bendraabdelali.Sentiment-Analysis" # name of the Azure pipeline to be triggered
-        azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
+        azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'  
         
