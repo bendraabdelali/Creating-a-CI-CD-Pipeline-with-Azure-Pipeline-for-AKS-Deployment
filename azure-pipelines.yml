@@ -1,0 +1,44 @@
+
+trigger:
+- none
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+  CONTAINER_REGISTRY: 'abdbndr'
+  image_name: "k8s-app"
+  vmImageName: "ubuntu-latest"
+  IMAGE_TAG: "1.1.$(Build.BuildId)"
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Docker Hub'
+        repository: "$(CONTAINER_REGISTRY)/$(image_name)" 
+        command: 'buildAndPush'
+        Dockerfile: 'Dockerfile'
+        tags: $(IMAGE_TAG)
+        
+    #  copy file      
+    - task: CopyFiles@2
+      inputs:
+        Contents: 'deployment.yaml'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+    # publish file
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+    

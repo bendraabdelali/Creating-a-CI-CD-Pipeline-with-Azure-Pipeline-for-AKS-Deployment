@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  devop-app
+  namespace: monitoring
+  labels:
+    app:  devop-app
+spec:
+  selector:
+    matchLabels:
+      app: devop-app
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  devop-app
+      
+    spec:
+      containers:
+      - name:  devop-app
+        image:   abdbndr/k8s-app:1.1.#{Build.BuildId}#
+        # image:  abdbndr/k8s-app:1.1.11
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 5000 
+          name:  devop-app
+      restartPolicy: Always
+--- 
+kind: Service
+apiVersion: v1
+metadata:
+  name: myapp-svc
+spec:
+  selector:
+    app:  devop-app
+  type:  LoadBalancer 
+  ports:
+  - name: myapp-svc
+    port:  5000
+    targetPort:  5000     
+
+---
