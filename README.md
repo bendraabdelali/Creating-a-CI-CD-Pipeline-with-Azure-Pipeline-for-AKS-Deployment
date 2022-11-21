@@ -42,39 +42,45 @@ Acces Grafana user:admin password: admin
  ```bash
   kubectl port-forward svc/prometheus-grafana -n monitoring 3000:80
 ```
+
 Acces Prometheus
  ```bash
  kubectl port-forward prometheus-prometheus-prometheus-0  80:9090 -n monitoring
 ```
+
+
 ### 2- Run  the pipeline
 To Run the pipline Just push new Commit in the main branch 
 ### 3- Check the pipline 
 
 
-## Access to portfolio
+
+
+## Access to Application 
 #### 
+acces th app 
+ ```bash
+ kubectl get svc myapp-svc -n monitoring 
+```
+copy the  external ip to use the application
+![image](./image/Aks.png)
 
- - [localhost:8080](http://localhost:8080/)
-![image](./assets/portfolio.png)
 
-### CI/Cd 
-## create jenkins Pipeline in Jenkis Server
-* create new item 
-![image](./assets/newitem.png)
 
-* Provide a name for your new item (e.g. CI-CD-Pipline) and select  Pipeline
-* Choose Pipeline as the job type and click OK.
-* Under Pipeline -> Definition choose Pipeline script from SCM.
-* Under SCM choose Git.
-* Under Repository URL paste the HTTPS URL of your (forked) repository.
-* Click Create.
-* before click build in the dashboard Jenkins do  some changes into index.html and after that push them into github
-* click build now and refresh the page to see the changes 
-![image](./assets/changes.png)
+
+
+
 ## Built With
-
+- Github Action
+- Azure Devops
+- Terrafrom
+- Kubernetes
+- Azure
 - Docker
-
+- Grafana
+- Prometheus
+- Mongo DB
+- Flask
 
 
 ## Authors
