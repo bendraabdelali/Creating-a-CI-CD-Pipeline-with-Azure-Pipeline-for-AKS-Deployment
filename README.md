@@ -8,6 +8,7 @@ In this project we will create :
 - 3 -Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
 - 4 -Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
 <br>
+
 ![image](./images/image.png.png)
 
 
