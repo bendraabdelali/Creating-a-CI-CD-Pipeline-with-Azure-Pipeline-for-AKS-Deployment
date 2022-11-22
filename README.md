@@ -47,7 +47,7 @@ Acces Prometheus
 ```
 ### 2- Run  the pipeline
 To Run the pipline Just push new Commit in the main branch 
-### 3- Check the pipline 
+### 3- Check the pipeline 
 - 2-Azure Pipline 
  ![AzurePipline](./images/check_Azure_Pipline.png)
 - 3- Docker Hub new Images is push 
