@@ -3,11 +3,11 @@
 # K8S-APP-CI-CD 
 
 In this project we will create :
-1 - Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
+- 1 - Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
 [` Kubernetes cluster with Terraform`](https://github.com/bendraabdelali/K8s-CI-Cd-Azure-Devops-Terraform-#1--create-a-kubernetes-cluster-with-terraform)
-2 - Create mongodb database and Prometheuse and Grfana using Terraform and helm .  
-3 -Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
-4 -Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
+- 2 - Create mongodb database and Prometheuse and Grfana using Terraform and helm .  
+- 3 -Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
+- 4 -Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
 <br>
 ![image](./images/image.png.png)
 
@@ -21,8 +21,6 @@ To run this project, you will need to install
 - [`Azure Cli`](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [`Terrafrom`](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [`Kubectl`](https://kubernetes.io/docs/tasks/tools/)
-
-
 
 ## Usage
 ### 1- Create a Kubernetes cluster with Terraform 
@@ -47,14 +45,9 @@ Acces Prometheus
  ```bash
  kubectl port-forward prometheus-prometheus-prometheus-0  80:9090 -n monitoring
 ```
-
-
 ### 2- Run  the pipeline
 To Run the pipline Just push new Commit in the main branch 
 ### 3- Check the pipline 
-
-
-
 - 2-Azure Pipline 
  ![AzurePipline](./images/check_Azure_Pipline.png)
 - 3- Docker Hub new Images is push 
@@ -70,11 +63,6 @@ acces th app
 ```
 copy the  external ip and past it into browser  to use the application
 ![app](./images/app.png)
-
-
-
-
-
 
 ## Built With
 - Github Action
