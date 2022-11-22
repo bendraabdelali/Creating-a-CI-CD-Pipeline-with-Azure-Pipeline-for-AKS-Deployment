@@ -3,11 +3,11 @@
 # K8S-APP-CI-CD 
 
 In this project we will create :
-1 - Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
+- 1 Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
 [` Kubernetes cluster with Terraform`](https://github.com/bendraabdelali/K8s-CI-Cd-Azure-Devops-Terraform-#1--create-a-kubernetes-cluster-with-terraform)
-2 - Create mongodb database and Prometheuse and Grfana using Terraform and helm .  
-3 -Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
-4 -Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
+- 2  Create mongodb database and Prometheuse and Grfana using Terraform and helm .  
+- 3 Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
+- 4 Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
 <br>
 ![image](./images/image.png.png)
 
@@ -50,7 +50,7 @@ Acces Prometheus
 
 
 ### 2- Run  the pipeline
-To Run the pipline Just push new Commit in the main branch 
+To Run the pipeline Just push new Commit in the main branch 
 ### 3- Check the pipline 
 
 
