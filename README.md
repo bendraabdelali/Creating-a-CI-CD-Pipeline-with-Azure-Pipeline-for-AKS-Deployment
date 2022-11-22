@@ -9,9 +9,8 @@ In this project we will create :
 - 3 Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
 - 4 Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
 <br>
-![image](./images/image.png.png)
 
-
+![imageapp](./images/image.png.png)
 ##  Prerequisites
 
 To run this project, you will need to install 
@@ -51,10 +50,16 @@ Acces Prometheus
 
 ### 2- Run  the pipeline
 To Run the pipeline Just push new Commit in the main branch 
-### 3- Check the pipline 
+### 3- Check the pipeline 
+- 1-Github Action
+ ![githubAction](./images/Chechk_Github_Action.png)
 
-
-
+- 2-Azure Pipline 
+ ![AzurePipline](./images/check_Azure_Pipline.png)
+- 3- Docker Hub new Images is push 
+ ![AzurePipline](./images/check_Docker-Hub.png)
+- 4- check the realese Pipline
+ ![AzurePipline](./images/check_realese.png)
 
 ## Access to Application 
 #### 
@@ -62,8 +67,8 @@ acces th app
  ```bash
  kubectl get svc myapp-svc -n monitoring 
 ```
-copy the  external ip to use the application
-![image](./image/Aks.png)
+copy the  external ip and past it into browser  to use the application
+![app](./images/app.png)
 
 
 

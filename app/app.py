@@ -8,12 +8,8 @@ from prometheus_flask_exporter import PrometheusMetrics
 import status
 
 app = Flask(__name__)
-# app.config["MONGO_URI"] = "mongodb://username:password@host:port/db_name?authSource=admin"
-
-app.config["MONGO_URI"] = "mongodb://root:pass@mongodb:27017/Users?authSource=admin"
-
-# app.config["MONGO_URI"] = "mongodb://mongodb:27017/Users"
-
+# app.config["MONGO_URI"] = "mongodb://root:pass@mongodb:27017/Users?authSource=admin"
+app.config["MONGO_URI"] = "mongodb://mongodb:27017/Users"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
 metrics = PrometheusMetrics(app)
