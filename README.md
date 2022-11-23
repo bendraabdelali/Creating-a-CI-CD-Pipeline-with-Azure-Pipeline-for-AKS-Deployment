@@ -5,8 +5,8 @@ In this project we will create :
 - 1 - Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
 [` Kubernetes cluster with Terraform`](https://github.com/bendraabdelali/K8s-CI-Cd-Azure-Devops-Terraform-#1--create-a-kubernetes-cluster-with-terraform)
 - 2 - Create mongodb database and Prometheuse and Grfana using Terraform and helm .  
-- 3 -Github Action pipeline that continuously build ,test  our app using  github actions . and trriger  Azure Devops  Pipelines.
-- 4 -Azure Devops pipeline that continuously  deploys to  AKS.  the images are pushed to your DockerHu  and the manifests are then deployed to  AKS cluster.
+- 3 -Github Action pipeline that continuously build ,test  our app . and trriger  Azure Devops  Pipelines.
+- 4 -Azure Devops pipeline that continuously deploys to  AKS.  the images are pushed to  DockerHub  and the manifests are then deployed to  AKS cluster.
 <br>
 
 ![image](./images/image.png.png)
@@ -24,7 +24,6 @@ To run this project, you will need to install
 
 ## Usage
 ### 1- Create a Kubernetes cluster with Terraform 
-first go and run House_predict_.ipynb to create model.joblib 
  ```bash
   cd IAC
   az login
@@ -36,14 +35,16 @@ Verify the health of the cluster
   kubect get pods 
   kubectl get all -n monitoring
 ```
-Acces Grafana 
-- copy the  external ip and past it into browser  to use grafana Dashboard
-- user:admin password: admin
+#### Acces Grafana 
+
  ```bash
    kubectl get svc prometheus-grafana -n monitoring
 ```
- - ![grafana](./images/grafana.png)
-Acces Prometheus
+- copy the  external ip and past it into browser  to use grafana Dashboard
+- user:admin password: admin
+- ![grafana](./images/grafana.png)
+
+#### Acces Prometheus
  ```bash
  kubectl port-forward prometheus-prometheus-prometheus-0  80:9090 -n monitoring
 ```
@@ -52,16 +53,15 @@ Acces Prometheus
 ### 2- Run  the pipeline
 To Run the pipeline Just push new Commit in the main branch 
 ### 3- Check the pipeline 
-- 2-Azure Pipline 
+#### - Azure Pipline 
  ![AzurePipline](./images/check_Azure_Pipline.png)
-- 3- Docker Hub new Images is push 
+#### - Docker Hub new Images is pushed 
  ![AzurePipline](./images/check_Docker-Hub.png)
-- 4- check the realese Pipline
+ #### - check the realese Pipeline
  ![AzurePipline](./images/check_realese.png)
 
 ## Access to Application 
 #### 
-acces th app 
  ```bash
  kubectl get svc myapp-svc -n monitoring 
 ```
