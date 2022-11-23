@@ -3,7 +3,9 @@ FROM python:3.8-alpine
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
-RUN python -m pip3 install --upgrade pip3
+
+Run python -m pip install --upgrade pip
+
 RUN pip3 install -r requirements.txt
 
 COPY ./app .
