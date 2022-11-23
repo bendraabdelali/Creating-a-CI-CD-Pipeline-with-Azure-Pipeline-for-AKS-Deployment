@@ -41,9 +41,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics  
     - name: install docker 
       run: |
-        apt-get update
-        apt-get -y install curl
-        apt-get -qq -y install curl
+        sudo apt-get update
+        sudo apt-get -y install curl
+        sudo apt-get -qq -y install curl
         
         curl -fsSL https://get.docker.com -o get-docker.sh
         chmod +x get-docker.sh
