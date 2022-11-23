@@ -1,7 +1,6 @@
 
 resource "kubernetes_namespace" "monitoring" {
   metadata {
-
     name = var.namespace
   }
 }
@@ -25,6 +24,11 @@ resource "helm_release" "prometheus" {
     value = var.grafana_pass
   }
 
+  set{
+    name="grafana.ingress.enabled"
+    value = "true"
+  }
+ 
 }
 
 

@@ -24,7 +24,7 @@ spec:
       containers:
       - name:  devop-app
         image:   abdbndr/k8s-app:1.1.#{Build.BuildId}#
-        # image:  abdbndr/k8s-app:1.1.11
+        
         resources:
           requests:
             cpu: 100m
@@ -41,6 +41,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: myapp-svc
+  namespace: monitoring
 spec:
   selector:
     app:  devop-app

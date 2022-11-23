@@ -36,17 +36,21 @@ Verify the health of the cluster
   kubect get pods 
   kubectl get all -n monitoring
 ```
-Acces Grafana user:admin password: admin
+Acces Grafana 
+- copy the  external ip and past it into browser  to use grafana Dashboard
+- user:admin password: admin
  ```bash
-  kubectl port-forward svc/prometheus-grafana -n monitoring 3000:80
+   kubectl get svc prometheus-grafana -n monitoring
 ```
-
+ - ![grafana](./images/grafana.png)
 Acces Prometheus
  ```bash
  kubectl port-forward prometheus-prometheus-prometheus-0  80:9090 -n monitoring
 ```
+ - ![prometheuse](./images/prometheuse.png)
+
 ### 2- Run  the pipeline
-To Run the pipline Just push new Commit in the main branch 
+To Run the pipeline Just push new Commit in the main branch 
 ### 3- Check the pipeline 
 - 2-Azure Pipline 
  ![AzurePipline](./images/check_Azure_Pipline.png)
