@@ -9,8 +9,10 @@ In this project we will create :
 - 4 -Azure Devops pipeline that continuously deploys to  AKS.  the images are pushed to  DockerHub  and the manifests are then deployed to  AKS cluster.
 <br>
 
-![image](./images/image.png.png)
 
+<p align="center">
+  <img src="./images/image.png.png" />
+</p>
 
 ##  Prerequisites
 
