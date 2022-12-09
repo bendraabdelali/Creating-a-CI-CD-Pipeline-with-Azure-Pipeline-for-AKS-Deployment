@@ -1,4 +1,4 @@
-[![Python application](https://github.com/bendraabdelali/K8S-APP-CI-CD/actions/workflows/python-app.yml/badge.svg)](https://github.com/bendraabdelali/K8S-APP-CI-CD/actions/workflows/python-app.yml)
+
 # K8S-APP-CI-CD 
 
 In this project we will create :
