@@ -1,6 +1,5 @@
-
 trigger:
-- none
+- main
 
 resources:
 - repo: self
@@ -11,6 +10,7 @@ variables:
   image_name: "k8s-app"
   vmImageName: "ubuntu-latest"
   IMAGE_TAG: "1.1.$(Build.BuildId)"
+  ConatinerName: "my-app"
 
 stages:
 - stage: Build
@@ -22,6 +22,26 @@ stages:
       vmImage: ubuntu-latest
     steps:
     
+    # test
+    - task: CmdLine@2
+      inputs:
+            script: |
+                sudo apt-get update
+                sudo apt-get -y install curl
+                sudo apt-get -qq -y install curl
+
+                curl -fsSL https://get.docker.com -o get-docker.sh
+                chmod +x get-docker.sh
+                sh get-docker.sh
+
+                curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+                sudo chmod +x /usr/local/bin/docker-compose
+                docker-compose up -d --build
+               
+                # run unit test 
+                docker exec $ConatinerName  /bin/sh -c "python -m unittest"
+    
+    # Push To Docker Hub
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
@@ -41,4 +61,3 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-    
