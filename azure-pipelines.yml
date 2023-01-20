@@ -55,6 +55,7 @@ stages:
       inputs:
         Contents: 'deployment.yaml'
         TargetFolder: '$(build.artifactstagingdirectory)'
+        
     # publish file
     - task: PublishBuildArtifacts@1
       inputs:
