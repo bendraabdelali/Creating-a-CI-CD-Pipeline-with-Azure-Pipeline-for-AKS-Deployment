@@ -5,8 +5,8 @@ In this project we will create :
 - 1 - Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
 [` Kubernetes cluster with Terraform`](https://github.com/bendraabdelali/K8s-CI-Cd-Azure-Devops-Terraform-#1--create-a-kubernetes-cluster-with-terraform)
 - 2 - Create mongodb database and Prometheuse and Grfana using Terraform and helm .  
-- 3 -Github Action pipeline that continuously build ,test  our app . and trriger  Azure Devops  Pipelines.
-- 4 -Azure Devops pipeline that continuously deploys to  AKS.  the images are pushed to  DockerHub  and the manifests are then deployed to  AKS cluster.
+- 3 - Azure Devops pipeline that continuously build ,test, deploys  our app  to  AKS. the images are pushed to  DockerHub  and the manifests are then deployed to  AKS cluster
+
 <br>
 
 
