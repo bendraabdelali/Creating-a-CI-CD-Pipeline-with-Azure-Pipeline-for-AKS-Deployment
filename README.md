@@ -1,5 +1,5 @@
 
-# K8S-APP-CI-CD 
+# Creating a CI/CD Pipeline with Azure Pipeline for AKS Deployment
 
 In this project we will create :
 - 1 - Create a Kubernetes cluster with Azure Kubernetes Service using Terraform
@@ -16,11 +16,11 @@ In this project we will create :
 
 ##  Prerequisites
 
-To run this project, you will need to install 
+To run this project, you will need:
 
-- [`Azure Account`](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F) 
+- [`Azure Account`](https://azure.microsoft.com/) 
 - [`Azure Devops Account`](https://azure.microsoft.com/en-us/products/devops/)
-- [`Azure Cli`](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [`Azure CLI`](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [`Terrafrom`](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [`Kubectl`](https://kubernetes.io/docs/tasks/tools/)
 
@@ -37,16 +37,18 @@ Verify the health of the cluster
   kubect get pods 
   kubectl get all -n monitoring
 ```
-#### Acces Grafana 
+#### Access Grafana 
 
  ```bash
    kubectl get svc prometheus-grafana -n monitoring
 ```
-- copy the  external ip and past it into browser  to use grafana Dashboard
-- user:admin password: admin
-- ![grafana](./images/grafana.png)
+Copy the  external ip and past it into browser  to use grafana Dashboard
+- User: admin
+- Password: admin
+![grafana](./images/grafana.png)
 
-#### Acces Prometheus
+#### Access Prometheus
+
  ```bash
  kubectl port-forward prometheus-prometheus-prometheus-0  80:9090 -n monitoring
 ```
@@ -75,11 +77,10 @@ copy the  external ip and past it into browser  to use the application
 - Azure Devops
 - Terrafrom
 - Kubernetes
-- Azure
 - Docker
 - Grafana
 - Prometheus
-- Mongo DB
+- MongoDB
 - Flask
 
 
